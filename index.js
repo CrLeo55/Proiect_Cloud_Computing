@@ -5,7 +5,7 @@ app.use('/', express.static('public'));
 
 app.get('/randomTaco', (req, res) => {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-    function trimiteDate()
+    function trimiteDatePtTaco()
     {
         if(this.readyState == 4 && this.status == 200)
         {
@@ -13,7 +13,7 @@ app.get('/randomTaco', (req, res) => {
         }
     }
     var myRequest = new XMLHttpRequest();
-    myRequest.onreadystatechange = trimiteDate;
+    myRequest.onreadystatechange = trimiteDatePtTaco;
     myRequest.open("GET", "http://taco-randomizer.herokuapp.com/random/", true);
     myRequest.send(null);
 })
@@ -21,7 +21,7 @@ app.get('/randomTaco', (req, res) => {
 
 app.get('/randomBeer', (req, res) => {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-    function trimiteDateINPULA()
+    function trimiteDatePtBere()
     {
         if(this.readyState == 4 && this.status == 200)
         {
@@ -29,7 +29,7 @@ app.get('/randomBeer', (req, res) => {
         }
     }
     var myRequest = new XMLHttpRequest();
-    myRequest.onreadystatechange = trimiteDateINPULA;
+    myRequest.onreadystatechange = trimiteDatePtBere;
     myRequest.open("GET", "https://api.punkapi.com/v2/beers/random", true);
     myRequest.send(null);
 })
