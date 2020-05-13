@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function parseJSONTaco()
+        {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                var parseJSON1 = JSON.parse(this.responseText);
+                var base = parseJSON1.base_layer.name;
+                var cond = parseJSON1.condiment.name;
+                var mix = parseJSON1.mixin.name;
+                var seas = parseJSON1.seasoning.name;
+                var she = parseJSON1.shell.name;
+                console.log(base);
+                document.getElementById('bl').innerHTML = base;
+                document.getElementById('cd').innerHTML = cond;
+                document.getElementById('mi').innerHTML = mix;
+                document.getElementById('ss').innerHTML = seas;
+                document.getElementById('sh').innerHTML = she;
+            }
+        }
+        
+        function parseJSONBeer()
+        {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                var parseJSON2 = JSON.parse(this.responseText)
+                var nume = parseJSON2[0].name;
+                var malt = " ";
+                for(var a in parseJSON2[0].ingredients.malt)
+                {
+                    if(parseJSON2[0].ingredients.malt[a].name != undefined)
+                    {
+                    malt = malt + parseJSON2[0].ingredients.malt[a].name + " | ";
+                    }
+                }
+                var hops = " ";
+                for(var a in parseJSON2[0].ingredients.hops)
+                {
+                    if(parseJSON2[0].ingredients.hops[a].name != undefined)
+                    {
+                    hops = hops + parseJSON2[0].ingredients.hops[a].name + " | ";
+                    }
+                }
+                var foodPairing = " ";
+                for(var a in parseJSON2[0].food_pairing)
+                {
+                    if(parseJSON2[0].food_pairing[a] != undefined)
+                    {
+                    foodPairing = foodPairing + parseJSON2[0].food_pairing[a] + " | ";
+                    }
+                }
+                document.getElementById('nume').innerHTML = nume;
+                document.getElementById('malt').innerHTML = malt;
+                document.getElementById('hops').innerHTML = hops;
+                document.getElementById('fp').innerHTML = foodPairing;
+                
+            }
+        }
+        
+        function preiaDateTaco()
+        {
+            var myRequest = new XMLHttpRequest();
+            myRequest.overrideMimeType("application/json");
+            myRequest.onreadystatechange = parseJSONTaco;
+            myRequest.open("GET", "/randomTaco", true);
+            myRequest.send(null);
+            console.log(myRequest);
+        }
+        
+        function predaDateBere()
+        {
+            var myRequest = new XMLHttpRequest();
+            myRequest.overrideMimeType("application/json");
+            myRequest.onreadystatechange = parseJSONBeer;
+            myRequest.open("GET", "/randomBeer", true);
+            myRequest.send(null);
+            console.log(myRequest);
+        }
+        
+        
+        </script>
+<body>
+
+<h1>LEO</h1>
+<p>Alege un tip de Taco</p>
+<button onclick="preiaDateTaco()">Afiseaza</button>
+<br>
+<label>base layer:</label>
+<label id="bl">.</label>
+<br>
+<label>condiment:</label>
+<label id="cd">.</label>
+<br>
+<label>mixin:</label>
+<label id="mi">.</label>
+<br>
+<label>seasoning:</label>
+<label id="ss">.</label>
+<br>
+<label>shell:</label>
+<label id="sh">.</label>
+<br>
+<p>Alege si o bere sa se potriveasca cu el</p>
+<button onclick="predaDateBere()">DeSewx</button>
+<br>
+<label>Nume:</label>
+<label id="nume">.</label>
+<br>
+<label>Ingrediente:</label>
+<br>
+<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malt:</label>
+<label id="malt">.</label>
+<br>
+<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hops:</label>
+<label id="hops">.</label>
+<br>
+<label>FoodPairing:</label>
+<label id="fp">.</label>
+<br>
+</body>
+</html>
+
+
