@@ -1,5 +1,64 @@
 <!DOCTYPE html>
 <html>
+    <head>
+<style>
+.button {
+  background-color: #40E0D0;
+  border: none;
+  color: yellow;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.button1 {border-radius: 50%;}
+.button2 {border-radius: 50%;}
+
+h1 {text-align: center;
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     display: block;
+      margin-left: auto;
+      margin-right: auto;
+}
+.label{
+    background-color: #40E0D0;
+  border: none;
+  color: yellow;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+p1 {display: inline;
+    color: yellow;
+    background:#40E0D0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+p2 {display: inline;
+    color: yellow;
+    background:#40E0D0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+
+</style>
+</head>
+<body>
     <script>
         function parseJSONTaco()
         {
@@ -81,42 +140,54 @@
         
         </script>
 <body>
-
-<h1>LEO</h1>
-<p>Alege un tip de Taco</p>
-<button onclick="preiaDateTaco()">Afiseaza</button>
+    <head>
+        <style>
+            body { background: url(https://static1.squarespace.com/static/5b19d6267c932717a65d200b/t/5badcc05f9619a3ac9b112e6/1538116653300/twobirdsbrewing_taco.jpg?format=1500w); 
+         background-position: center; background-repeat: no-repeat; background-size: cover;  }
+        </style>
+    </head>
+<h1>Taco&Beer</h1>
+<p1 style='border:2px #40E0D0 solid; font-size:42px;'><b>Alege un tip de Taco</b></p1>
 <br>
-<label>base layer:</label>
-<label id="bl">.</label>
 <br>
-<label>condiment:</label>
-<label id="cd">.</label>
+<button onclick="preiaDateTaco()", class="button button1"><b>Taco Click</b></button>
 <br>
-<label>mixin:</label>
-<label id="mi">.</label>
 <br>
-<label>seasoning:</label>
-<label id="ss">.</label>
+<label class="label label"><b>Base Layer </b></label>
+<label id="bl", class="label label">.</label>
 <br>
-<label>shell:</label>
-<label id="sh">.</label>
+<label class="label label"><b>Condiment </b></label>
+<label id="cd", class="label label">.</label>
 <br>
-<p>Alege si o bere sa se potriveasca cu el</p>
-<button onclick="predaDateBere()">DeSewx</button>
+<label class="label label"><b>Mixin </b></label>
+<label id="mi", class="label label">.</label>
 <br>
-<label>Nume:</label>
-<label id="nume">.</label>
+<label class="label label"><b>Seasoning </b></label>
+<label id="ss", class="label label">.</label>
 <br>
-<label>Ingrediente:</label>
+<label class="label label"><b>Shell </b></label>
+<label id="sh", class="label label">.</label>
 <br>
-<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Malt:</label>
-<label id="malt">.</label>
 <br>
-<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hops:</label>
-<label id="hops">.</label>
+<p2 style='border:2px #40E0D0 solid; font-size:42px;'><b>Alege si o bere sa se potriveasca cu el</b></p2>
 <br>
-<label>FoodPairing:</label>
-<label id="fp">.</label>
+<br>
+<button onclick="predaDateBere()", class="button button2"><b>Beer Click</b></button>
+<br>
+<br>
+<label class="label label"><b>Name</b></label>
+<label id="nume", class="label label">.</label>
+<br>
+<label class="label label"><b>Ingredients:</b></label>
+<br>
+<label class="label label"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.Malt<b></label>
+<label id="malt", class="label label">.</label>
+<br>
+<label class="label label"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.Hops</b></label>
+<label id="hops", class="label label">.</label>
+<br>
+<label class="label label"><b>FoodPairing</b></label>
+<label id="fp", class="label label">.</label>
 <br>
 </body>
 </html>
